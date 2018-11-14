@@ -143,7 +143,7 @@ namespace Renci.SshNet
             _session = session;
             CommandText = commandText;
             _encoding = encoding;
-            CommandTimeout = Session.InfiniteTimeSpan;
+            CommandTimeout = session.ConnectionInfo.Timeout;// Session.InfiniteTimeSpan;
             _sessionErrorOccuredWaitHandle = new AutoResetEvent(false);
 
             _session.Disconnected += Session_Disconnected;
